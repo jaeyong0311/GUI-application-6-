@@ -1,0 +1,38 @@
+# 라이브러리 가져오기 #
+from tkinter import*
+import tkinter as tk
+from tkinter import ttk
+from PIL import Image, ImageTk
+# python3 -m pip install --upgrade pip
+# python3 -m pip install --upgrade Pillow
+
+# pip3 install image
+# pip3 install pillow
+root = Tk()
+root.title("BMI 계산기 GUI")
+root.geometry('470x580+300+200') # 정 세부 사이즈 설정
+root.resizable(False, False) # 장 사이즈 변경 여부
+root.configure(bg='#B2EBF4') # 장의 배경 색상 설정
+
+# 타이틀 icon 삽입
+image_icon = PhotoImage(file='D:/edfg/사진/icon.png')
+root.iconphoto(False,image_icon)
+
+#창 제일 상단 부분에 top이라는 이미지 파일 삽입
+top = PhotoImage(file='D:/edfg/사진/top.png')
+top_image = Label(root, image=top, background="#0054FF")
+top_image.place(x=-10, y=-10)
+
+# 하단 부분 박스 (파란색/색깔 상관없음)
+Label(root, width=72, height=18, bg='#D4F4FA').pack(side=BOTTOM)
+
+# 2개의 박스 생성 (이미지 활용)
+box = PhotoImage(file='D:/edfg/사진/box.png')
+Label(root, image=box).place(x=20, y=100) # box1
+Label(root, image=box).place(x=240, y=100) # box2
+
+# 눈금 이미지 파일 하단 박스 부분에 삽입 #
+scale = PhotoImage(file='D:/edfg/사진/scale.png')
+Label(root, image=scale, background='#D4F4FA').place(x=20, y=310)
+
+root.mainloop()
